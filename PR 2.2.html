@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Відлік часу з секундами, хвилинами та годинами</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+       
+        #clock {
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+  
+    <div id="clock"></div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+
+            const seconds = now.getSeconds();
+            const minutes = now.getMinutes();
+            const hours = now.getHours();
+
+            const clockDisplay = hours + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+
+            document.getElementById('clock').textContent = 'Поточний час: ' + clockDisplay;
+
+            if (seconds === 0) {
+                // Вмикаємо відображення хвилин, якщо секунди дорівнюють 0
+                document.getElementById('clock').textContent = 'Поточний час: ' + hours + ":" + (minutes < 10 ? "0" + minutes : minutes);
+
+                if (minutes === 0) {
+                    // Вмикаємо відображення годин, якщо хвилини дорівнюють 0
+                    document.getElementById('clock').textContent = 'Поточний час: ' + hours;
+                }
+            }
+        }
+
+        // Оновлення годинника кожну секунду
+        setInterval(updateClock, 1000);
+
+        // Оновлення годинника при завантаженні сторінки
+        updateClock();
+    </script>
+</body>
+</html>

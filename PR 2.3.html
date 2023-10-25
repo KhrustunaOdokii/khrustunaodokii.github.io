@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ефект друкарської машинки</title>
+    <style>
+        body {
+            font-family: Courier, monospace;
+            font-size: 24px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        let textToPrint = "Це текст, який буде виводити ефект друкарської машинки.";
+        const outputElement = document.getElementById("output");
+
+        let currentIndex = 0;
+        let printingNewText = false;
+
+        function printText() {
+            if (printingNewText) {
+                if (currentIndex < newText.length) {
+                    outputElement.textContent += newText.charAt(currentIndex);
+                    currentIndex++;
+                } else {
+                    clearInterval(printInterval);
+                    currentIndex = 0;
+                    printingNewText = false;
+                }
+            } else {
+                if (currentIndex < textToPrint.length) {
+                    outputElement.textContent += textToPrint.charAt(currentIndex);
+                    currentIndex++;
+                } else {
+                    clearInterval(printInterval);
+                    currentIndex = 0;
+                    printingNewText = true;
+                    promptForNewText();
+                }
+            }
+        }
+
+        function promptForNewText() {
+            newText = prompt("Введіть новий текст для виведення:");
+            if (newText) {
+                // Почати друк нового тексту
+                textToPrint = newText;
+                printInterval = setInterval(printText, 100);
+            }
+        }
+
+        let newText = "";
+
+        let printInterval = setInterval(printText, 100);
+
+    </script>
+</body>
+</html>
