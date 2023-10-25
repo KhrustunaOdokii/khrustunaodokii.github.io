@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список студентів</title>
+</head>
+<body>
+  
+    <button onclick="inputStudents()">Введіть інформацію про студентів</button>
+
+    <script>
+        function inputStudents() {
+            // Запитуємо кількість студентів у групі
+            const numberOfStudents = parseInt(prompt("Введіть кількість студентів у групі:"));
+
+            // Перевіряємо, чи введене значення є числом
+            if (!isNaN(numberOfStudents) && numberOfStudents > 0) {
+                const studentList = [];
+
+                // Запитуємо прізвища та імена студентів в циклі
+                for (let i = 1; i <= numberOfStudents; i++) {
+                    const lastName = prompt(`Введіть прізвище студента #${i}:`);
+                    const firstName = prompt(`Введіть ім'я студента #${i}:`);
+                    studentList.push(`${lastName} ${firstName}`);
+                }
+
+                // Виводимо список студентів у вікні браузера
+                alert("Список студентів:\n" + studentList.join("\n"));
+            } else {
+                // Обробка помилки для некоректного введення кількості студентів
+                alert("Введено некоректну кількість студентів. Будь ласка, введіть додатне число.");
+            }
+        }
+    </script>
+</body>
+</html>

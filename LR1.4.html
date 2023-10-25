@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Діалогове вікно з confirm</title>
+</head>
+<body>
+    
+    <button onclick="showConfirmDialog()">Показати діалогове вікно</button>
+
+    <script>
+        function showConfirmDialog() {
+            // Відображаємо діалогове вікно з кнопками "Ок" і "Відміна"
+            const result = confirm("Ви впевнені, що хочете продовжити?");
+
+            // Перевіряємо результат вибору користувача
+            if (result) {
+                alert("Ви натиснули 'Ок'.");
+            } else {
+                alert("Ви натиснули 'Відміна' або закрили діалогове вікно.");
+            }
+        }
+    </script>
+</body>
+</html>

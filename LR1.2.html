@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Запит інформації</title>
+</head>
+<body>
+    
+    <button onclick="showPrompt()">Клацніть, щоб ввести інформацію</button>
+
+    <script>
+        function showPrompt() {
+            
+            const userInput = prompt("Будь ласка, введіть інформацію:");
+
+           
+            if (userInput === null || userInput === "") {
+                alert("Ви не ввели інформацію.");
+            } else {
+                
+                alert("Ваша інформація: " + userInput);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Діалогове вікно</title>
+</head>
+<body>
+    <script>
+        
+        var userInput = window.prompt("Натисніть кнопку 'OK' для виведення фрази в браузері", "");
+
+      
+        if (userInput === null) {
+            alert("Користувач скасував операцію.");
+        } else {
+            
+            document.write("Hello, world!");
+        }
+    </script>
+</body>
+</html>
