@@ -17,7 +17,7 @@
   </ul>
 
   <script>
- 
+    // Функція для додавання елементу до списку покупок
     function addItem() {
       const itemInput = document.getElementById("item");
       const itemName = itemInput.value.trim();
@@ -28,11 +28,11 @@
 
       const shoppingList = document.getElementById("shoppingList");
 
-   
+      // Створення нового елементу списку
       const newItem = document.createElement("li");
       newItem.innerHTML = itemName;
 
-    
+      // Створення кнопки для видалення елементу
       const deleteButton = document.createElement("button");
       deleteButton.innerHTML = "Видалити";
       deleteButton.onclick = function() {
@@ -41,13 +41,13 @@
         }
       };
 
-    
+      // Додавання кнопки видалення до елементу списку
       newItem.appendChild(deleteButton);
 
-     
+      // Додавання нового елементу до списку покупок
       shoppingList.appendChild(newItem);
 
-  
+      // Очищення поля вводу та встановлення фокусу
       itemInput.value = "";
       itemInput.focus();
     }
