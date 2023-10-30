@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Список покупок</title>
+  <style>
+    #shoppingList li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Список покупок</h1>
+  <input type="text" id="item" placeholder="Введіть елемент">
+  <button onclick="addItem()">Додати елемент</button>
+
+  <ul id="shoppingList">
+  </ul>
+
+  <script>
+    // Функція для додавання елементу до списку покупок
+    function addItem() {
+      const itemInput = document.getElementById("item");
+      const itemName = itemInput.value.trim();
+      if (itemName === "") {
+        alert("Введіть назву елемента.");
+        return;
+      }
+
+      const shoppingList = document.getElementById("shoppingList");
+
+      // Створення нового елементу списку
+      const newItem = document.createElement("li");
+      newItem.innerHTML = itemName;
+
+      // Створення кнопки для видалення елементу
+      const deleteButton = document.createElement("button");
+      deleteButton.innerHTML = "Видалити";
+      deleteButton.onclick = function() {
+        if (confirm("Ви впевнені, що хочете видалити цей елемент?")) {
+          shoppingList.removeChild(newItem);
+        }
+      };
+
+      // Додавання кнопки видалення до елементу списку
+      newItem.appendChild(deleteButton);
+
+      // Додавання нового елементу до списку покупок
+      shoppingList.appendChild(newItem);
+
+      // Очищення поля вводу та встановлення фокусу
+      itemInput.value = "";
+      itemInput.focus();
+    }
+  </script>
+</body>
+</html>
+
