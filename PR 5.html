@@ -1,0 +1,122 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список завдань</title>
+    <h1>ToDo List</h1>
+    <style>
+     body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+      }
+
+#taskContainer {
+    text-align: left;
+    width: 300px; 
+    align-items: flex-start; 
+    margin-top: 20px; 
+}
+
+#taskInput {
+        margin-top: 10px;
+        width: 90%;
+        padding: 8px;
+        margin: 8px auto;
+        border: 1px solid #fd002a;
+        border-radius: 10px;
+      }
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.task input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.task.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.delete {
+    cursor: pointer;
+    color: red;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <div id="taskContainer">
+        <input type="text" id="taskInput" placeholder="Додати  завдання" onkeypress="addTask(event)">
+        <div id="taskList"></div>
+    </div>
+
+    <script>
+        function addTask(event) {
+            if (event.key === "Enter") {
+                const taskInput = document.getElementById("taskInput");
+                const taskList = document.getElementById("taskList");
+
+                if (taskInput.value.trim() !== "") {
+                    const taskText = taskInput.value;
+                    const taskDate = new Date().toLocaleString();
+
+                    const taskElement = document.createElement("div");
+                    taskElement.className = "task";
+                    taskElement.innerHTML = `
+                        <input type="checkbox" onchange="toggleTask(this)">
+                        <span onclick="editTask(this)">${taskText} (${taskDate})</span>
+                        <span class="delete" onclick="deleteTask(this)">❌</span>
+                    `;
+
+                    taskList.appendChild(taskElement);
+                    taskInput.value = "";
+                }
+            }
+        }
+
+        function toggleTask(checkbox) {
+            const task = checkbox.parentNode;
+            task.classList.toggle("completed");
+            checkbox.remove();
+        }
+
+        function deleteTask(deleteButton) {
+            const task = deleteButton.parentNode;
+            task.remove();
+        }
+
+        function editTask(span) {
+            const taskText = span.innerText;
+            const input = document.createElement("input");
+            input.type = "text";
+            input.value = taskText.split(" ")[0];
+            input.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    span.innerText = `${input.value} (${new Date().toLocaleString()})`;
+                    input.remove();
+                }
+            });
+            span.replaceWith(input);
+            input.focus();
+        }
+    </script>
+
+</body>
+</html>
