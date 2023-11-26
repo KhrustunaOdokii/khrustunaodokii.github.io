@@ -30,20 +30,20 @@
             document.getElementById('clock').textContent = 'Поточний час: ' + clockDisplay;
 
             if (seconds === 0) {
-                // Вмикаємо відображення хвилин, якщо секунди дорівнюють 0
+                
                 document.getElementById('clock').textContent = 'Поточний час: ' + hours + ":" + (minutes < 10 ? "0" + minutes : minutes);
 
                 if (minutes === 0) {
-                    // Вмикаємо відображення годин, якщо хвилини дорівнюють 0
+                  
                     document.getElementById('clock').textContent = 'Поточний час: ' + hours;
                 }
             }
         }
 
-        // Оновлення годинника кожну секунду
+     
         setInterval(updateClock, 1000);
 
-        // Оновлення годинника при завантаженні сторінки
+      
         updateClock();
     </script>
 </body>
