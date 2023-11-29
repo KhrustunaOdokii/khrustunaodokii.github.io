@@ -1,0 +1,78 @@
+{
+  "mainName": "Shop",
+  "location": "Ivano Frankivsk",
+  "formed": 2023,
+  "type": "Football Equipment",
+  "items": [
+    {
+      "imagePath": "./images/football.jpg",
+      "name": "Football",
+      "model": "Nike Premier Team",
+      "price": "1500 UAH",
+      "availability": "Add to Cart",
+      "specialMark": "Best Seller",
+      "discount": "15%",
+      "advantages": [
+        "Durable PU Cover",
+        "High-Quality Stitching",
+        "Optimal Air Retention"
+      ]
+    },
+    {
+      "imagePath": "./images/football_boots.jpg",
+      "name": "Football Boots",
+      "model": "Adidas Predator Freak.1",
+      "price": "3500 UAH",
+      "availability": "Add to Cart",
+      "specialMark": "Novelty",
+      "discount": "",
+      "advantages": [
+        "Knitted Upper",
+        "DemonSkin Technology",
+        "Enhanced Traction"
+      ]
+    },
+    {
+      "imagePath": "./images/football_goal.jpg",
+      "name": "Football Goal",
+      "model": "FORZA Steel42",
+      "price": "4500 UAH",
+      "availability": "Add to Cart",
+      "specialMark": null,
+      "discount": "10%",
+      "advantages": [
+        "Weatherproof Steel Frame",
+        "Quick Assembly",
+        "Suitable for All Ages"
+      ]
+    },
+    {
+      "imagePath": "./images/cone_set.jpg",
+      "name": "Training Cone Set",
+      "model": "SKLZ 10-Pack",
+      "price": "300 UAH",
+      "availability": "Add to Cart",
+      "specialMark": "Best Seller",
+      "discount": "5%",
+      "advantages": [
+        "Durable Plastic",
+        "Bright Colors",
+        "Versatile Training Tool"
+      ]
+    },
+    {
+      "imagePath": "./images/water_bottle.jpg",
+      "name": "Sports Water Bottle",
+      "model": "CamelBak Podium",
+      "price": "250 UAH",
+      "availability": "Add to Cart",
+      "specialMark": "Novelty",
+      "discount": "",
+      "advantages": [
+        "BPA-Free",
+        "High Flow Rate",
+        "Easy Squeeze Design"
+      ]
+    }
+  ]
+}
