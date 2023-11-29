@@ -5,7 +5,7 @@
   "type": "Football Equipment",
   "items": [
     {
-      "imagePath": "./images/football.jpg",
+      "imagePath": "./images/1.jpg",
       "name": "Football",
       "model": "Nike Premier Team",
       "price": "1500 UAH",
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "imagePath": "./images/football_boots.jpg",
+      "imagePath": "./images/2.jpeg",
       "name": "Football Boots",
       "model": "Adidas Predator Freak.1",
       "price": "3500 UAH",
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "imagePath": "./images/football_goal.jpg",
+      "imagePath": "./images/3.jpg",
       "name": "Football Goal",
       "model": "FORZA Steel42",
       "price": "4500 UAH",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "imagePath": "./images/cone_set.jpg",
+      "imagePath": "./images/4.jpg",
       "name": "Training Cone Set",
       "model": "SKLZ 10-Pack",
       "price": "300 UAH",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "imagePath": "./images/water_bottle.jpg",
+      "imagePath": "./images/5.jpg",
       "name": "Sports Water Bottle",
       "model": "CamelBak Podium",
       "price": "250 UAH",
